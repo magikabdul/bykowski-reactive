@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BykowskiReactiveApplication {
+public class ReactiveApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BykowskiReactiveApplication.class, args);
+        SpringApplication.run(ReactiveApplication.class, args);
 
     }
 
