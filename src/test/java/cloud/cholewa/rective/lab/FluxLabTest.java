@@ -25,5 +25,13 @@ class FluxLabTest {
                 .verifyComplete();
     }
 
-
+    @Test
+    void shouldReturnFluxThatEmitsTwoStringValuesFromList() {
+        StepVerifier.create(fluxLab.fooBarFluxFromList())
+                .expectSubscription()
+                .expectNext("foo")
+                .expectNext("bar")
+                .expectNextCount(0)
+                .verifyComplete();
+    }
 }
