@@ -14,4 +14,14 @@ class FluxLabTest {
                 .expectNextCount(0)
                 .verifyComplete();
     }
+
+    @Test
+    void shouldReturnFLLuxThatEmitsTwoStringValues() {
+        StepVerifier.create(fluxLab.fooBarFluxFromValues())
+                .expectSubscription()
+                .expectNext("foo")
+                .expectNext("bar")
+                .expectNextCount(0)
+                .verifyComplete();
+    }
 }
