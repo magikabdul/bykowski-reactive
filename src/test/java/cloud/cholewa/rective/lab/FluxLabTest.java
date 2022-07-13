@@ -16,7 +16,7 @@ class FluxLabTest {
     }
 
     @Test
-    void shouldReturnFLLuxThatEmitsTwoStringValues() {
+    void shouldReturnFluxThatEmitsTwoStringValues() {
         StepVerifier.create(fluxLab.fooBarFluxFromValues())
                 .expectSubscription()
                 .expectNext("foo")
@@ -24,4 +24,6 @@ class FluxLabTest {
                 .expectNextCount(0)
                 .verifyComplete();
     }
+
+
 }
