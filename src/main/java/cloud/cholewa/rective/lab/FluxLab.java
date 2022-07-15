@@ -2,6 +2,7 @@ package cloud.cholewa.rective.lab;
 
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
 import java.util.List;
 
 class FluxLab {
@@ -21,5 +22,15 @@ class FluxLab {
         List<String> stringList = List.of("foo", "bar");
 
         return Flux.fromIterable(stringList);
+    }
+
+    //Create a Flux that emits an IllegalStateException
+    Flux<String> errorFlux() {
+        return Flux.error(new IllegalStateException());
+    }
+
+    //Create a Flux that emits increasing values from 0 to 9 each 100ms
+    Flux<Long> counter() {
+        return Flux.interval(Duration.ofMillis(100)).take(10);
     }
 }
