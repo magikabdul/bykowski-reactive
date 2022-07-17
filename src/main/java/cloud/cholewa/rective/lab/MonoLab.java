@@ -8,4 +8,9 @@ class MonoLab {
     Mono<String> emptyMono() {
         return Mono.empty();
     }
+
+    //Return a Mono that never emits any signal
+    Mono<String> monoWithNoSignal() {
+        return Mono.never();
+    }
 }
