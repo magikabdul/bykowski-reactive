@@ -13,4 +13,9 @@ class MonoLab {
     Mono<String> monoWithNoSignal() {
         return Mono.never();
     }
+
+    //Return a Mono that contains a "foo" value
+    Mono<String> fooMono() {
+        return Mono.just("foo");
+    }
 }

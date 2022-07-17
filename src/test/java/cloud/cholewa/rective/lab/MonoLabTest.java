@@ -24,4 +24,11 @@ class MonoLabTest {
                 .thenCancel()
                 .verify();
     }
+
+    @Test
+    void shouldEmitMonoWithSingleValue() {
+        StepVerifier.create(monoLab.fooMono())
+                .expectNext("foo")
+                .verifyComplete();
+    }
 }
