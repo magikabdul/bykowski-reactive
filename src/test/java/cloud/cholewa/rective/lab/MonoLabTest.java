@@ -31,4 +31,11 @@ class MonoLabTest {
                 .expectNext("foo")
                 .verifyComplete();
     }
+
+    @Test
+    void shouldEmitMonoOnlyWithError() {
+        StepVerifier.create(monoLab.errorMono())
+                .expectError(IllegalStateException.class)
+                .verify();
+    }
 }

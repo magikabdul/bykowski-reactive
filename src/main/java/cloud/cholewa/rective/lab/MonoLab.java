@@ -18,4 +18,9 @@ class MonoLab {
     Mono<String> fooMono() {
         return Mono.just("foo");
     }
+
+    //Create a Mono that emits an IllegalStateException
+    Mono<String> errorMono() {
+        return Mono.error(new IllegalStateException());
+    }
 }
