@@ -22,4 +22,8 @@ class Part03StepVerifier {
             return value;
         });
     }
+
+    Flux<User> emitTwoUsers() {
+        return Flux.just(User.SKYLER, User.JESSE);
+    }
 }

@@ -1,5 +1,6 @@
 package cloud.cholewa.rective.lab.part03;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 
@@ -26,5 +27,15 @@ class Part03StepVerifierTest {
                 .expectNext("bar")
                 .expectError(RuntimeException.class)
                 .verify();
+    }
+
+    // Use StepVerifier to check that the flux parameter emits a User with "swhite" username
+    // and another one with "jpinkman" then completes successfully.
+    @Test
+    void expectSkylerJesseComplete() {
+        StepVerifier.create(part.emitTwoUsers())
+                .expectNextMatches(user -> user.getUsername().equals("swhite"))
+                .expectNextMatches(user -> user.getUsername().equals("jpinkman"))
+                .verifyComplete();
     }
 }
